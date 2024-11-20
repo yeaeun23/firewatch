@@ -1,0 +1,100 @@
+a {
+  color: unset;
+  text-decoration: unset;
+}
+
+body {
+  height: 300vh;
+  background-color: #00110c;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  height: 34px;
+  background-color: #04120c;
+  color: #b8e1ee;
+  justify-content: space-between;
+}
+
+.button-in-header {
+  padding: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  height: 34px;
+  box-sizing: border-box;
+  text-transform: uppercase;
+}
+
+.button-in-header:hover {
+  background-color: #127374;
+}
+
+#right-buttons {
+  display: flex;
+}
+
+#active-menu {
+  background-color: #013a3b;
+}
+
+#image-wrapper {
+  overflow: hidden;
+}
+
+#main-image {
+  min-width: 1000px;
+}
+
+#main-content-wrapper {
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#document-title {
+  margin-bottom: 40px;
+  color: #b8e1ee;
+  font-size: 170%;
+  font-weight: 300;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+}
+
+#mountain-tag-wrapper {
+  font-size: 18px;
+  font-weight: 700;
+  display: flex;
+  gap: 50px;
+}
+
+.mountain-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.mountain-content-list {
+  display: flex;
+  width: 325px;
+  height: 32px;
+  justify-content: center;
+  align-items: center;
+  background-color: #bbe1ee;
+  color: #00110c;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.15s;
+  letter-spacing: 3px;
+  padding: 4px 13px 3px 16px;
+}
+
+.mountain-content-list:hover {
+  background-color: #fff;
+}
+
+.mountain-content-list img {
+  height: 17px;
+  margin-right: 11px;
+}

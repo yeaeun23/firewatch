@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head>
-    <link rel="stylesheet" href="./reset.css" />
-    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="./style/reset.css" />
+    <link rel="stylesheet" href="./style/index.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Campo Santo - Firewatch</title>
   </head>
   <body>
     <header>
-      <a class="button-in-header">CAMPO SANTO</a>
+      <a href="#main-content-wrapper" class="button-in-header">Campo Santo</a>
       <div id="right-buttons">
-        <a id="active-menu" class="button-in-header">FIREWATCH</a>
-        <a class="button-in-header">DEVELOPMENT BLOG</a>
-        <a class="button-in-header">QUARTERLY REVIEW</a>
+        <a id="active-menu" class="button-in-header">Firewatch</a>
+        <a class="button-in-header">Development Blog </a>
+        <a class="button-in-header">Quarterly Review </a>
       </div>
     </header>
     <div id="image-wrapper">
@@ -1670,6 +1670,31 @@
         </g>
       </svg>
     </div>
+    <div id="main-content-wrapper">
+      <p id="document-title">Available now for $19.99</p>
+      <div id="mountain-tag-wrapper">
+        <ul class="mountain-content-wrapper">
+          <li class="mountain-content-list">
+            <img src="./img/buyicon_pc.png" />
+            Windows Mac Linux
+          </li>
+          <li class="mountain-content-list">
+            <img src="./img/buyicon_ps4.png" />
+            PlayStation 4
+          </li>
+        </ul>
+        <ul class="mountain-content-wrapper">
+          <li class="mountain-content-list">
+            <img src="./img/buyicon_switch.png" />
+            Nintendo Switch
+          </li>
+          <li class="mountain-content-list">
+            <img src="./img/buyicon_xbone.png" />
+            Xbox One
+          </li>
+        </ul>
+      </div>
+    </div>
   </body>
 
   <script>
@@ -1715,6 +1740,16 @@
       element.addEventListener("click", (event) => {
         document.getElementById("active-menu").removeAttribute("id");
         element.setAttribute("id", "active-menu");
+      });
+    });
+
+    // 부드러운 스크롤 효과
+    const link = document.querySelector('a[href="#main-content-wrapper"]');
+
+    link.addEventListener("click", () => {
+      event.preventDefault();
+      document.querySelector("#main-content-wrapper").scrollIntoView({
+        behavior: "smooth",
       });
     });
   </script>
