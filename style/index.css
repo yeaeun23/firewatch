@@ -1,10 +1,5 @@
-a {
-  color: unset;
-  text-decoration: unset;
-}
-
 body {
-  height: 300vh;
+  height: 200vh;
   background-color: #00110c;
 }
 
@@ -15,6 +10,11 @@ header {
   background-color: #04120c;
   color: #b8e1ee;
   justify-content: space-between;
+}
+
+a {
+  color: unset;
+  text-decoration: unset;
 }
 
 .button-in-header {
@@ -30,6 +30,24 @@ header {
   background-color: #127374;
 }
 
+.long-text {
+  display: none;
+}
+
+.short-text {
+  display: inline;
+}
+
+@media (min-width: 880px) {
+  .long-text {
+    display: inline;
+  }
+
+  .short-text {
+    display: none;
+  }
+}
+
 #right-buttons {
   display: flex;
 }
@@ -42,10 +60,6 @@ header {
   display: flex;
   justify-content: center;
   overflow: hidden;
-}
-
-#main-image {
-  min-width: 1000px;
 }
 
 #main-content-wrapper {
@@ -68,7 +82,14 @@ header {
   font-size: 18px;
   font-weight: 700;
   display: flex;
+  flex-direction: column;
   gap: 50px;
+}
+
+@media (min-width: 880px) {
+  #mountain-tag-wrapper {
+    flex-direction: row;
+  }
 }
 
 .mountain-content-wrapper {
