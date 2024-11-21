@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head>
-    <link rel="stylesheet" href="./style/reset.css" />
-    <link rel="stylesheet" href="./style/index.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./style/reset.css" />
+    <link rel="stylesheet" href="./style/index.css" />
     <title>Campo Santo - Firewatch</title>
   </head>
   <body>
@@ -1713,43 +1714,74 @@
     const mountain6 = document.getElementById("mountain6");
     const mountain7 = document.getElementById("mountain7");
 
+    // 브라우저 가로 크기
+    let clientWidth = document.documentElement.clientWidth;
+
+    // 스크롤 이벤트
     window.addEventListener("scroll", () => {
-      const scrollY = window.scrollY;
+      if (clientWidth > 800) {
+        const scrollY = window.scrollY;
 
-      sun.style.transform = `translateY(${scrollY * 1.05}px)`;
+        sun.style.transform = `translateY(${scrollY * 1.05}px)`;
 
-      grayClouds.style.transform = `translateX(${scrollY * 0.125}px)`;
-      whiteClouds.style.transform = `translateX(${scrollY * -0.125}px)`;
+        grayClouds.style.transform = `translateX(${scrollY * 0.125}px)`;
+        whiteClouds.style.transform = `translateX(${scrollY * -0.125}px)`;
 
-      bird1.style.transform = `translateX(${scrollY}px)`;
-      bird2.style.transform = `translateX(${scrollY * -3.5}px)`;
-      bird3.style.transform = `translateX(${scrollY * -0.5}px)`;
+        bird1.style.transform = `translateX(${scrollY}px)`;
+        bird2.style.transform = `translateX(${scrollY * -3.5}px)`;
+        bird3.style.transform = `translateX(${scrollY * -0.5}px)`;
 
-      mountain0.style.transform = `translateY(${scrollY * 0.95}px)`;
-      mountain1.style.transform = `translateY(${scrollY * 0.93}px)`;
-      mountain2.style.transform = `translateY(${scrollY * 0.9}px)`;
-      mountain3.style.transform = `translateY(${scrollY * 0.9}px)`;
-      mountain4.style.transform = `translateY(${scrollY * 0.7}px)`;
-      mountain5.style.transform = `translateY(${scrollY * 0.6}px)`;
-      mountain6.style.transform = `translateY(${scrollY * 0.3}px)`;
-      mountain7.style.transform = `translateY(${scrollY * 0.1}px)`;
+        mountain0.style.transform = `translateY(${scrollY * 0.95}px)`;
+        mountain1.style.transform = `translateY(${scrollY * 0.93}px)`;
+        mountain2.style.transform = `translateY(${scrollY * 0.9}px)`;
+        mountain3.style.transform = `translateY(${scrollY * 0.9}px)`;
+        mountain4.style.transform = `translateY(${scrollY * 0.7}px)`;
+        mountain5.style.transform = `translateY(${scrollY * 0.6}px)`;
+        mountain6.style.transform = `translateY(${scrollY * 0.3}px)`;
+        mountain7.style.transform = `translateY(${scrollY * 0.1}px)`;
+      }
     });
 
-    // 헤더 우측 링크 클릭 이벤트
-    document.querySelectorAll("#right-buttons .button-in-header").forEach((element) => {
-      element.addEventListener("click", (event) => {
-        document.getElementById("active-menu").removeAttribute("id");
-        element.setAttribute("id", "active-menu");
-      });
+    // 화면 리사이즈 이벤트
+    window.addEventListener("resize", () => {
+      clientWidth = document.documentElement.clientWidth;
+
+      if (clientWidth <= 800) {
+        sun.style.transform = `translateY(0)`;
+
+        grayClouds.style.transform = `translateX(0)`;
+        whiteClouds.style.transform = `translateX(0)`;
+
+        bird1.style.transform = `translateX(0)`;
+        bird2.style.transform = `translateX(0)`;
+        bird3.style.transform = `translateX(0)`;
+
+        mountain0.style.transform = `translateY(0)`;
+        mountain1.style.transform = `translateY(0)`;
+        mountain2.style.transform = `translateY(0)`;
+        mountain3.style.transform = `translateY(0)`;
+        mountain4.style.transform = `translateY(0)`;
+        mountain5.style.transform = `translateY(0)`;
+        mountain6.style.transform = `translateY(0)`;
+        mountain7.style.transform = `translateY(0)`;
+      }
     });
 
-    // 부드러운 스크롤 효과
+    // 헤더 좌측 링크 클릭 이벤트 (부드럽게 이동)
     const link = document.querySelector('a[href="#main-content-wrapper"]');
 
     link.addEventListener("click", () => {
       event.preventDefault();
       document.querySelector("#main-content-wrapper").scrollIntoView({
         behavior: "smooth",
+      });
+    });
+
+    // 헤더 우측 링크 클릭 이벤트 (active 스타일)
+    document.querySelectorAll("#right-buttons .button-in-header").forEach((element) => {
+      element.addEventListener("click", (event) => {
+        document.getElementById("active-menu").removeAttribute("id");
+        element.setAttribute("id", "active-menu");
       });
     });
   </script>
